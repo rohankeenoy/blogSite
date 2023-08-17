@@ -1,0 +1,42 @@
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin: -10vh 0 0; /* Adjust the margin-top value as needed */
+    padding:0;
+    box-sizing: border-box;
+
+}
+.circle{
+    transform-style:preserve-3d;
+    animation: animate 8s linear infinite;
+
+}
+@keyframes animate{
+    0%{
+        transform:perspective(1000px) rotateY(360deg) rotateX(13deg);
+
+    }
+    100%{
+        transform:perspective(1000px) rotateY(0deg) rotateX(13deg);
+    }
+}
+.circle .char{
+    transform-style: preserve-3d;
+    text-transform: capitalize;
+    position:absolute;
+    font-weight: bold;
+    top:0;
+    left:0;
+    color:#35146f;
+    font-size: 4em;
+    padding:8px 30px;
+    border-top:4px solid #35146f;
+    border-bottom: 4px solid #35146f;
+    border-radius: 50%;
+    transform-style:preserve-3d;
+    transform-origin:center;
+    transform:rotateY(calc(var(--char)*28deg))translateZ(250px);
+}
